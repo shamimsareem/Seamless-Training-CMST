@@ -20,9 +20,9 @@ def subsequent_mask(size):
     subsequent_mask = torch.triu(torch.ones(attn_shape), diagonal=1)
     return subsequent_mask == 0
 
-class XTransformer(BasicModel):
+class SeamlessT(BasicModel):
     def __init__(self):
-        super(XTransformer, self).__init__()
+        super(SeamlessT, self).__init__()
         self.vocab_size = cfg.MODEL.VOCAB_SIZE + 1
 
         self.backbone = STBackbone(
